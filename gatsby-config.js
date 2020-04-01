@@ -7,6 +7,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'localhost:9001',
+        sitemap: 'localhost:9001/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
